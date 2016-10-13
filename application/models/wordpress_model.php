@@ -86,31 +86,7 @@ class Wordpress_model extends CI_Model {
         $detail->user_articles_num = $articles_num->articles_num;
         */
 	// replace video
-	$detail->post_content = $this->adjust_content($detail->post_content);
-        
-        return $detail; 
-        
-    }
-    
-    public function comments_list($id, $page=1){
-        $page_size = M_LIST_PAGE_SIZE;
-        $page = ($page < 1) ? 1 : intval($page);
-        $start = ($page-1)*$page_size;
-        $where = "";
-        $last_id = $this->input->cookie('comment_last_id');
-        if ($page > 1 && !empty($last_id)){
-            $where .= " AND a.comment_ID <= $last_id";
-        }
-        
-        $comments = $this->comments_list($id);
-        $detail->comments = $comments;
-
-        //作者发布文章数量
-        $sql = 'SELECT COUNT(ID) articles_num FROM wp_posts WHERE `post_author` = '.$detail->post_author;
-        $articles_num = $this->db_wp->query($sql)->row();
-        $detail->user_articles_num = $articles_num->articles_num;
-        
-	// replace video
+	//echo $detail->post_content;
 	$detail->post_content = $this->adjust_content($detail->post_content);
         
         return $detail; 
@@ -143,7 +119,6 @@ class Wordpress_model extends CI_Model {
             }
             
             if ($page == 1 && !$k) $this->input->set_cookie('comment_last_id', $comment['comment_ID'], CACHE_TIME_RECOMMEND_PRO);
->>>>>>> .r668
             /*$response = explode('&', $comment['response']);
             $response1 = array();
             foreach($response as $r){

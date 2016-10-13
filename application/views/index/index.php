@@ -7,7 +7,7 @@
                  <ul class="ck-slide-wrapper">
                      
                      <?php foreach($pc_top_carousel as $k => $v):?>
-                         <li style="<?php echo $k == 0 ? '' : 'display:none'?>"><a href="<?php echo $v['href'];?>" target="_blank"><img class="lazy" data-original="<?php echo img_url($v['img_src']);?>" width="1170" height="460" alt="<?php echo $v['title'];?>"/></a></li>
+                         <li style="<?php echo $k == 0 ? '' : 'display:none'?>"><a href="<?php echo $v['href'];?>" target="_blank"><img class="lazy" data-original="<?php echo img_url($v['img_src']);?>" width="1170" height="460" alt=""/></a></li>
                      <?php endforeach;?>
                  </ul>
                   <div class="ck-slidebox">

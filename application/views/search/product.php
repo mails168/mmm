@@ -4,7 +4,7 @@
                 ?>
                 <li>
                     <a href="/pdetail-<?php echo $p->product_id;?>">
-                       <div class="mall_pro-img"><img src="<?php echo img_url($p->img_url.".220x220.jpg");?>" alt="" /></div>
+                       <div class="mall_pro-img"><img src="<?php echo img_url($p->img_url.".220x220.jpg?v=2");?>" alt="" /></div>
                        <div class="mall_pro-mc"><span><?php echo $p->brand_name;?></span><?php echo $p->product_name;?></div>
                        <div class="mall_pro-sprice"><i>¥</i><?php echo $p->product_price;?><span><i>¥</i><?php echo $p->market_price;?></span></div>
                     </a>

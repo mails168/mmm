@@ -9,6 +9,6 @@
    </div>
 </div>
 <script>
-            setTimeout(function(){location.href = '/'},5000);
+            // setTimeout(function(){location.href = '/'},5000);
 </script>
 <?php include APPPATH . 'views/common/footer.php'?>

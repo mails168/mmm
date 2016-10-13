@@ -1,6 +1,6 @@
 <div class="mall-cart_hover">
     <div class="mall_cart_top clearfix">
-         <div class="mall_cart_pic fl"><a href="/pdetail-<?php print $product->product_id;?>.html"><img src="<?php print img_url($product->img_url.".85x85.jpg"); ?>" alt=""/></a></div>
+         <div class="mall_cart_pic fl"><a href="/pdetail-<?php print $product->product_id;?>.html"><img src="<?php print img_url($product->img_url.".85x85.jpg?v=2"); ?>" alt=""/></a></div>
          <div class="mall_cart_title fl">
                <div class="mall_pro-mc"><a href="/pdetail-<?php print $product->product_id;?>.html"><span><?php print $product->brand_name;?></span><?php print $product->product_name;?></a></div>
                <div class="mall_pro-sprice"><i>¥</i><?php print $product->product_price; ?><span><i>¥</i><em><?php print $product->market_price; ?></em></span></div>

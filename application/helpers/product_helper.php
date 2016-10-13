@@ -175,7 +175,7 @@ function get_recommend_data($filter = array()){
         	format_product($product);
             $reco_html .= '<li>
                             <a href="/pdetail-'.$product->product_id.'.html">
-                               <div class="mall_pro-img"><img src="'.img_url($product->img_url.".220x220.jpg").'" alt="" /></div>
+                               <div class="mall_pro-img"><img src="'.img_url($product->img_url.".220x220.jpg?v=2").'" alt="" /></div>
                                <div class="mall_pro-mc"><span>'.$product->brand_name.'</span>'.$product->product_name.'</div>
                                <div class="mall_pro-sprice"><i>¥</i>'.$product->product_price.'<span><i>¥</i><em>'.$product->market_price.'</em></span></div>
                             </a>
