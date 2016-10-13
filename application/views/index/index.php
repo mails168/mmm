@@ -303,8 +303,24 @@
         <?php } ?>
     </div>
 </div>
-<?php include APPPATH . 'views/common/footer.php'?>
 
+<?php if(!empty($pc_link_list)){ ?>
+<div class="friendship-link">
+    <div class="footer-inner">
+        <div class="link-inner clearfix">
+            <div class="link-bt fl">友情链接：</div>
+            <div class="link-lb fl">
+                <div class="link-yichu">
+                <?php foreach ($pc_link_list as $val_url) { ?>
+                    <a href="<?php echo $val_url->link_url;?>" target="_blank"><?php echo $val_url->link_name;?></a>|
+                <? } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
+<?php include APPPATH . 'views/common/footer.php'?>
 
 <script type="text/javascript" src="<?php echo static_style_url('new_pc/js/slide.js?v=version');?>"></script>
 <script type="text/javascript" src="<?php echo static_style_url('new_pc/js/index.js?v=version');?>"></script>

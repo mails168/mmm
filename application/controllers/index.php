@@ -113,6 +113,7 @@ class Index extends CI_Controller
         $this->config->load('global', true);
         $this->load->model('product_model');
         $this->load->model('wordpress_model');
+        $this->load->model('about_us_model');
         $this->load->helper('product');
 
         $data = array();
@@ -206,7 +207,10 @@ class Index extends CI_Controller
         }
 
         $data['pc_brand_teamwork'] = $brand_info;
-       
+        
+        //PC 友情链接
+        $data['pc_link_list'] = $this->about_us_model->index_link_url();
+
         // 获取动态seo关键字
         $this->load->library('lib_seo');
         $seo = $this->lib_seo->get_seo_by_pagetag('pc_index');

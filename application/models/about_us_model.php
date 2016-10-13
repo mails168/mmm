@@ -22,4 +22,12 @@ class About_us_model extends CI_Model
 		$this->_db->insert('product_liuyan', $param);
 		return $this->_db->insert_id();
 	}
+
+	// PC首页友情链接
+	public function index_link_url($filter)
+	{
+		$sql = " SELECT link_id,link_name,link_url FROM ty_friend_link ORDER BY sort_order DESC,create_date DESC ";
+        $query = $this->_db->query($sql);
+        return $query->result();
+	}
 }
