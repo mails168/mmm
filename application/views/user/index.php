@@ -3,7 +3,7 @@
                     <h1 class="order-details-bt">个人中心</h1>
                     <div class="my-center clearfix">
                         <div class="my-touxiang fl-left">
-                            <img src="<?php echo static_style_url('mobile/touxiang/'.$advar.'?v=version')?>">
+                            <img  width="88" height="88" src="<?php echo static_style_url('mobile/touxiang/'.$advar.'?v=version')?>">
                             <div class="fl-right center-mingchen"><span><?php echo $user_name;?></span><a href="/user/profile.html">修改头像></a></div>
                         </div>
                         <div class="center-lsit fl-left">
