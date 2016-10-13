@@ -7,7 +7,7 @@
                  <ul class="ck-slide-wrapper">
                      
                      <?php foreach($pc_top_carousel as $k => $v):?>
-                         <li style="<?php echo $k == 0 ? '' : 'display:none'?>"><a href="<?php echo $v['href'];?>" title="<?php echo $v['title'];?>" target="_blank"><img class="lazy" data-original="<?php echo img_url($v['img_src']);?>" width="1170" height="460" alt="<?php echo $v['title'];?>"/></a></li>
+                         <li style="<?php echo $k == 0 ? '' : 'display:none'?>"><a href="<?php echo $v['href'];?>" target="_blank"><img class="lazy" data-original="<?php echo img_url($v['img_src']);?>" width="1170" height="460" alt="<?php echo $v['title'];?>"/></a></li>
                      <?php endforeach;?>
                  </ul>
                   <div class="ck-slidebox">
@@ -216,8 +216,10 @@
         <ul class="encyclopedia-video">
             <?php foreach ($v->products_info as $pro) { ?>
             <li>
-                <a href="/video/detail/<?php echo $pro->ID;?>"><img class="lazy" data-original="<?php echo $pro->cover;?>" width="585" height="275" alt="<?php echo $pro->post_title;?>"/></a>
-                <span class="video-ico"></span>
+                <a href="/article/video_detail/<?php echo $pro->ID;?>"><img class="lazy" data-original="<?php echo $pro->cover;?>" width="585" height="275" alt="<?php echo $pro->post_title;?>"/>
+                    <span class="video-ico"></span>
+                </a>
+                
                 <p><?php echo $pro->post_title;?></p>
             </li>
             <?php } ?>
@@ -229,9 +231,9 @@
             <?php foreach ($v->products_info as $pro) { ?>
             <li>
                 <div class="video_list_top clearfix">
-                    <div class="video_list_pic"><a href="/video/detail/<?php echo $pro->ID;?>"><img class="lazy" data-original="<?php echo $pro->cover;?>" width="275" height="275" alt="<?php echo $pro->post_title;?>"/></a></div>
+                    <div class="video_list_pic"><a href="/article/video_detail/<?php echo $pro->ID;?>"><img class="lazy" data-original="<?php echo $pro->cover;?>" width="275" height="275" alt="<?php echo $pro->post_title;?>"/></a></div>
                     <div class="video_list_js">
-                        <a href="/video/detail/<?php echo $pro->ID;?>"><?php echo $pro->intro;?></a>
+                        <a href="/article/video_detail/<?php echo $pro->ID;?>"><?php echo $pro->intro;?></a>
                     </div>
                 </div>
                 <p class="video_list_bt"><?php echo $pro->post_title;?></p>

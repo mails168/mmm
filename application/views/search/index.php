@@ -96,7 +96,7 @@
               <ul class=" clearfix">
               <?php foreach ($video as $vio_val) { ?>
               <li>
-              <a href="/video/detail/<?php echo $vio_val->ID;?>">
+              <a href="/article/video_detail/<?php echo $vio_val->ID;?>">
               <div class="video-img"><img src="<?php echo $vio_val->img;?>"><span class="video-ico"></span></div>
               <span><?php echo $vio_val->post_title;?></span>
               </a>

@@ -157,7 +157,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <?php echo $p->product_desc;?>
+                
                 <?php echo $p->detail1;?>
             </div>
             <div id="ceshishipin" class="test_video">

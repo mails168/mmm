@@ -325,7 +325,8 @@ function get_pager_param($filter)
 
 function adjust_path($content)
 {   
-    $content = str_replace('<img','<img style="width:100%;" ',$content);
+    //$content = str_replace('<img','<img style="width:100%;" ',$content);
+    $content = str_replace('<img','<img ',$content);
 	return str_replace('/public/data/images/upload/',img_url('upload/'),$content);
 }
 

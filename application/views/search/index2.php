@@ -184,8 +184,10 @@
             <ul class="encyclopedia-video">
                 <?php foreach($video['list'] as $v): ?>
                 <li>
-                    <a href="/article/detail/<?=$v->ID?>"><img src="<?=$v->cover?>" width="585" height="275" alt=""/></a>
+                    <a href="/article/detail/<?=$v->ID?>"><img src="<?=$v->cover?>" width="585" height="275" alt=""/>
                     <span class="video-ico"></span>
+                    </a>
+                    
                     <p><?=$v->post_title?></p>
                 </li>
                 <?php endforeach; ?>

@@ -55,7 +55,7 @@
                                          <ul class="list j-mainslide-weekrank clearfix">
 <?php foreach($hot['week'] as $index => $h):?>
                                          <li>
-                                         <a class="item" target="_blank" href="/video/detail/<?php echo $h['ID']?>">
+                                         <a class="item" target="_blank" href="/article/video_detail/<?php echo $h['ID']?>">
 <span class="num"><?php echo $h['views']?></span>
 <i class="icon<?php if(3>$index) echo ' icon2';?>"><?php echo 1+$index?></i><span class="txt f-ib f-thide"><?php echo $h['post_title']?></span>
                                          </a>
@@ -71,7 +71,7 @@
                                          <ul class="list j-mainslide-weekrank clearfix">
 <?php foreach($hot['month'] as $index => $h):?>
                                          <li>
-                                         <a class="item" target="_blank" href="/video/detail/<?php echo $h['ID']?>">
+                                         <a class="item" target="_blank" href="/article/video_detail/<?php echo $h['ID']?>">
 <span class="num"><?php echo $h['views']?></span><i class="icon<?php if(3>$index) echo ' icon2';?>"><?php echo 1+$index?></i><span class="txt f-ib f-thide"><?php echo $h['post_title']?></span>
                                          </a>
                                          </li>
@@ -89,7 +89,7 @@
 								    <ul class="list">
 <?php foreach($new as $n):?>
 								    <li>
-                                    <a href="/video/detail/<?php echo $n['ID']?>" target="_blank" class="item">
+                                    <a href="/article/video_detail/<?php echo $n['ID']?>" target="_blank" class="item">
                                     <span class="ltxt f-ib f-thide"><span class="subtxt"></span><?php echo $n['post_title']?></span>
 									</a>
                                     </li>
@@ -123,7 +123,7 @@
               </li>
 <?php foreach(array_slice($video1, 0, 9) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -137,7 +137,7 @@
               <ul class="video-lb1 clearfix">
               <?php foreach(array_slice($video1, 10) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -154,7 +154,7 @@
             <li><div class="video-gongyong zhongzhi"><a href="#"><?php echo $categorys[1]?></a></div></li>
 <?php foreach(array_slice($video2, 0, 9) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -168,7 +168,7 @@
               <ul class="video-lb1 clearfix">
               <?php foreach(array_slice($video2, 10) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -185,7 +185,7 @@
             <li><div class="video-gongyong zhengji"><a href="#"><?php echo $categorys[2]?></a></div></li>
 <?php foreach(array_slice($video3, 0, 9) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -199,7 +199,7 @@
               <ul class="video-lb1 clearfix">
               <?php foreach(array_slice($video3, 10) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -216,7 +216,7 @@
             <li><div class="video-gongyong qiatan"><a href="#"><?php echo $categorys[3]?></a></div></li>
 <?php foreach(array_slice($video4, 0, 9) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -230,7 +230,7 @@
               <ul class="video-lb1 clearfix">
               <?php foreach(array_slice($video4, 10) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -246,7 +246,7 @@
             <li><div class="video-gongyong qiatan2"><a href="#"><?php echo $categorys[4]?></a></div></li>
 <?php foreach(array_slice($video5, 0, 9) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>
@@ -260,7 +260,7 @@
               <ul class="video-lb1 clearfix">
               <?php foreach(array_slice($video5, 10) as $v):?>
              <li>
-             <a href="/video/detail/<?php echo $v->ID?>">
+             <a href="/article/video_detail/<?php echo $v->ID?>">
               <div class="video-pic"><img src="<?php echo $v->cover?>"></div>
                  <div class="video-title"><?php echo $v->post_title?></div>
                  <div class="video-xinxi clearfix"><span class="video-zz"><?php echo $v->display_name?></span><span class="video-riqi"><?php echo current(explode(' ', $v->post_date))?></span></div>

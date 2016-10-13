@@ -371,6 +371,7 @@ class Product extends CI_Controller
         $mobile = $this->session->userdata('mobile') ? $this->session->userdata('mobile') : '';
         $p->detail1 = adjust_path($p->detail1);
         $p->detail2 = adjust_path($p->detail2);
+        $p->product_desc = adjust_path($p->product_desc);
 
         //产品评论
         $liuyan_list = null;

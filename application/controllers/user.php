@@ -379,7 +379,7 @@ class User extends CI_Controller
                 $user_id = $this->session->userdata('user_id');
         } else
         {
-                goto_login('user/order');
+                goto_login('user/order_list');
         }
         $user_info = $this->user_obj->get_profile($user_id);
 

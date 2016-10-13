@@ -57,7 +57,7 @@
                               <ul class="i_list">
                               <?php foreach($videos as $v):?>
                                    <li>
-                                        <a href="/video/detail/<?=$v->ID?>">
+                                        <a href="/article/video_detail/<?=$v->ID?>">
                                              <div>
                                                   <img src="<?php echo $v->cover?>" alt="">
                                                   <p class="i_title"><?= cutstr($v->post_title, 0, 13)?></p>

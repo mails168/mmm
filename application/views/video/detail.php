@@ -154,7 +154,7 @@ h1, .h1, h2, .h2, h3, .h3 { margin-bottom:0; margin-top:0;}
               <ul id="videoHotBox">
 <?php foreach ($hotvideos as $k => $v):?>                        
             <li class="hot-video-list clearfix">
-                  <a href="/video/detail/<?=$v->ID?>" data-id="273" class="hot-video-play">
+                  <a href="/article/video_detail/<?=$v->ID?>" data-id="273" class="hot-video-play">
                   <img src="<?php echo $v->cover?>">
                   <div class="time">02:54</div>
                   <div class="scan-linear-mask"></div>
