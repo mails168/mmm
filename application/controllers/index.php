@@ -131,17 +131,21 @@ class Index extends CI_Controller
 
         $data['pc_hot_product'] = $pc_hot_product;
         
+       
+
         //PC口腔器材
         $pc_mouth_product = $this->_get_ad('pc_mouth_product','pc_mouth_product');
         foreach ($pc_mouth_product as $key => $value) {
             $product = array();
             $brand = array();
             $desc = '';
+            $seo = '';
             $str = cutstr_html($value->ad_code, 0);
             parse_str($str);
             $pc_mouth_product[$key]->products_info = $this->_get_cache_products($product);
             $pc_mouth_product[$key]->brands_info = $this->_get_cache_brands($brand);
             $pc_mouth_product[$key]->desc = $desc;
+            $pc_mouth_product[$key]->seo = $seo;
         }
         
         $data['pc_mouth_product'] = $pc_mouth_product;
@@ -152,11 +156,13 @@ class Index extends CI_Controller
             $product = array();
             $brand = array();
             $desc = '';
+            $seo = '';
             $str = cutstr_html($value->ad_code, 0);
             parse_str($str);
             $pc_nurse_product[$key]->products_info = $this->_get_cache_products($product);
             $pc_nurse_product[$key]->brands_info = $this->_get_cache_brands($brand);
             $pc_nurse_product[$key]->desc = $desc;
+            $pc_nurse_product[$key]->seo = $seo;
         }
         
         $data['pc_nurse_product'] = $pc_nurse_product;

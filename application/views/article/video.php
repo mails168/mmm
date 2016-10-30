@@ -24,7 +24,7 @@
              <ul class="encyclopedia-video clearfix">
              <?php foreach($list as $v): ?>    
              <li>
-             <a href="/article/video_detail/<?=$v->ID?>"><img src="<?=$v->cover?>" width="585" height="275" alt=""/>
+             <a href="/article/video_detail/<?=$v->ID?>"><img src="<?=$v->cover?>" width="275" height="275" alt=""/>
              <span class="video-ico"></span>
              </a>
              

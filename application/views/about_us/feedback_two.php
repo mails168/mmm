@@ -8,7 +8,7 @@
             <li><a href="/about_us/feedback" class="about-currt">意见反馈</a></li>
             <li><a href="/about_us/sales_policy">售后政策</a></li>
             <li><a href="/about_us/team_work">合作咨询</a></li>
-            <li><a href="/about_us/join_us">加入我们</a></li>
+            <li><a href="http://jobs.51job.com/all/co2393685.html" target="_blank">加入我们</a></li>
         </ul> 
         <div class="about-lb feedback"> 
             <p class="about-tit">意见反馈<span>Feedback</span></p>

@@ -202,14 +202,14 @@ class Product extends CI_Controller
         } 
         
         //判断是否用户已经收藏
-        $is_collected = false;
+        /*$is_collected = false;
         if ($this->user_id) {
         	//判断收藏的商品是否已收藏
         	$col=$this->product_model->filter_collect(array('product_id'=>$product_id,'product_type'=>3,'user_id'=>$this->user_id));	
         	if (!empty($col)) {
         		$is_collected = true;
         	}
-        }
+        }*/ 
         
 		$this->load->view($view_page,array(
 			'title'		=> $seo['title'],	
@@ -234,9 +234,8 @@ class Product extends CI_Controller
 			'user_id' => $this->session->userdata('user_id'),
 			'is_outofdate' => $is_outofdate,
 			'related_courses' => $related_courses,
-			'is_exceed_num' => $is_exceed_num,
-			'product_desc_additional' => $product_desc_additional, 
-                    'is_collected' => $is_collected
+			'is_exceed_num' => $is_exceed_num,			
+			'product_desc_additional' => $product_desc_additional
                                 //,
 //			'css'		=> array('css/plist.css'),
 			//'gifts_list'	=> $this->rush_model->get_campaign(),

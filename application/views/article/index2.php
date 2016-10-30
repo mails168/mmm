@@ -22,7 +22,7 @@
                     <div class="video_list_top clearfix">
                         <div class="video_list_pic"><a href="/article/detail/<?=$v->ID?>"><img src="<?=$v->cover?>" width="275" height="275" alt=""/></a></div>
                         <div class="video_list_js">
-                            <a href="/article/detail/<?=$v->ID?>"><?=$v->intro?></a>
+                            <!-- <a href="/article/detail/<?=$v->ID?>"><?=$v->intro?></a> -->
                         </div>
                     </div>
                     <p class="video_list_bt"><?=$v->post_title?></p>

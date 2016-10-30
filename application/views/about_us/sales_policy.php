@@ -8,7 +8,7 @@
             <li><a href="/about_us/feedback">意见反馈</a></li>
             <li><a href="/about_us/sales_policy" class="about-currt">售后政策</a></li>
             <li><a href="/about_us/team_work">合作咨询</a></li>
-            <li><a href="/about_us/join_us">加入我们</a></li>
+            <li><a href="http://jobs.51job.com/all/co2393685.html" target="_blank">加入我们</a></li>
         </ul>
         <div class="about-lb">
             <div class="sales-pilicy-left">
@@ -32,7 +32,7 @@
             </div>  
             <div class="sales-pilicy-right" style="display:none;">     
                 <h3>退换货流程</h3>
-                <img src="<?php echo static_style_url('pc/images/tuihuo.png')?>" alt="退换货流程">
+                <img src="<?php echo static_style_url('new_pc/images/tuihuo.png?v=version')?>" alt="退换货流程">
                 <p>注意事项：</p>
                 <p>1.请您于每天9：00-21：00致电400 990 5920客服热线申请退换货，我们的客服人员会指导您进行正确的退换货操作；</p>
                 <p>2.如发生退货，请将相关促销赠品等一并退回；悦牙网将同时收回您购买此商品所获的相应积分；</p>
@@ -45,7 +45,7 @@
                 <p>如您在悦牙网购买的商品出现质量问题，请自售出之日起的15天内，致电悦牙网客服中心说明情况，并准备好发票、退换货登记表等单据，并确保商品原件、配件、包装、说明书等完整无缺。</p>
                 <p></p>
                 <p>退换货规则：</p>
-                <img src="<?php echo static_style_url('pc/images/tuihuan.png')?>" alt="退换货规则">
+                <img src="<?php echo static_style_url('new_pc/images/tuihuan.png?v=version')?>" alt="退换货规则">
                 <p></p>
                 <p>以下情况恕不提供退换货：</p>
                 <p>1.  超过退换货有效期商品；</p>
@@ -59,7 +59,7 @@
             </div> 
             <div class="sales-pilicy-right" style="display:none;">     
                 <h3>投诉处理流程</h3>
-                <img src="<?php echo static_style_url('pc/images/tousu.png')?>" alt="投诉处理流程">
+                <img src="<?php echo static_style_url('new_pc/images/tousu.png?v=version')?>" alt="投诉处理流程">
             </div>  
             <div class="sales-pilicy-right" style="display:none;">     
                 <h3>资料下载</h3>  

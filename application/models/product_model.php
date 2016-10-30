@@ -876,7 +876,8 @@ class Product_model extends CI_Model
         $filter['record_count'] = 0;
         $filter['page_count'] = 0;
                 
-        $where = " AND pif.price_show = 0 AND pif.shop_price > 0 AND psb.is_on_sale=1 AND b.is_use = 1 AND pp.is_use = 1 "; 
+        //$where = " AND pif.price_show = 0 AND pif.shop_price > 0 AND psb.is_on_sale=1 AND b.is_use = 1 AND pp.is_use = 1 "; 
+        $where = " AND pif.shop_price > 0 AND psb.is_on_sale=1 AND b.is_use = 1 AND pp.is_use = 1 "; 
         if (!empty($filter['ids'])) {
             $where .= " AND pif.product_id in (".$filter['ids'].") ";
         } elseif (!empty($filter['kw'])) {
@@ -915,7 +916,7 @@ class Product_model extends CI_Model
 	$filter['page'] = $filter['page'] == 0 ? 1:$filter['page'];
 	$start = $filter['page'] < 1 ? 0:($filter['page'] - 1 ) * $filter['page_size']; //开始条数
         
-    	$sql = "SELECT pif.`product_id`, pif.product_desc_additional, pif.product_desc, pif.is_promote,pif.promote_start_date, pif.promote_end_date,pif.promote_price, pif.brand_name, pif.`product_name`,pif.`market_price`,pif.`shop_price`,pgy.`img_url`,pze.`size_name`,pif.`subhead`,pif.`package_name` "
+    	$sql = "SELECT pif.`product_id`, pif.product_desc_additional, pif.product_desc, pif.is_promote,pif.promote_start_date, pif.promote_end_date,pif.promote_price, pif.brand_name, pif.`product_name`,pif.`market_price`,pif.`shop_price`,pgy.`img_url`,pze.`size_name`,pif.`subhead`,pif.`package_name`, pif.`price_show` "
                 . "FROM ".$this->_db->dbprefix('product_info')." AS pif "
                 . "LEFT JOIN ".$this->_db->dbprefix('product_sub')." AS psb ON psb.`product_id` = pif.`product_id`	"
                 . "LEFT JOIN ".$this->_db->dbprefix('product_size')." AS pze ON pze.`size_id` = psb.`size_id` "

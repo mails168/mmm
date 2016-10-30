@@ -718,16 +718,20 @@ function get_front_types($genre_id=1){
      */
     function get_select_multi_type($args = array() ,$slave = TRUE ){
         $this->excdb = $slave ?$this->db_r:$this->db ;
+        $is_preview = isset($_GET['is_preview']) && $_GET['is_preview']== 1 ?TRUE:FALSE; 
         $cache_data = array( );
         $cache_key = 'product_';
         if (!empty($args['brand'])) $brand_arr = explode(",", $args['brand']);
         if (!empty($args['cat'])) $cat_arr = explode(",", $args['cat']);
         if (!empty($args) && $args['cat_type'] == 'c'){
             $cache_key .= 'type_c_' . $args['cat'].'_'.$args['brand'];
+            if($is_preview){
+            	$this->cache->delete($cache_key);
+            }
             if (($cache_data = $this->cache->get($cache_key) ) === FALSE ) {
                 $this->cache->delete($cache_key);
                 $sql = "SELECT * FROM ty_product_type WHERE type_id IN (".$args['cat'].")";
-                $tmp_row = $this->db_r->query($sql)->result_array();
+                $tmp_row = $this->db_r->query($sql)->result_array();               
                 $row = array();
                 foreach ($tmp_row as $i => $row2) {                            
                     if (!empty($row2['cat_content'])) {
@@ -735,7 +739,7 @@ function get_front_types($genre_id=1){
                         foreach ($tmp_row2['brand'] as $id => $r){
                             if(isset($brand_arr) && in_array($id, $brand_arr)) {
                                 $row['filter_brand']['title'][$id] = $r['name'];
-				if (!isset($row['filter_brand']['display'])) $row['filter_brand']['display'] = array();
+								if (!isset($row['filter_brand']['display'])) $row['filter_brand']['display'] = array();
                                 if ((count($row['filter_brand']['display']) < 3)) $row['filter_brand']['display'][$id] = $r['name'];
                             } elseif (!isset($brand_arr)) {
                                 $row['brand'][$id] = $r;
@@ -744,6 +748,9 @@ function get_front_types($genre_id=1){
                     }
                     $row['filter_type']['title'][] = $row2['type_name'];
                     if ($i < 3) $row['filter_type']['display'][] = $row2['type_name'];
+                    $row['seo_type']['title'] = $row2['title'];
+                    $row['seo_type']['keywords'] = $row2['keywords'];
+                    $row['seo_type']['description'] = $row2['description'];
                 }
                 $cache_data = $row;
                 $this->cache->save($cache_key, $row , CACHE_TIME_SELECT_TYPE);
@@ -793,10 +800,15 @@ function get_front_types($genre_id=1){
     }
     
     function get_product_types($ids){
+    	$is_preview = isset($_GET['is_preview']) && $_GET['is_preview']== 1 ?TRUE:FALSE; 
         $cache_key = 'type_s_'.$ids;
+        if($is_preview){
+        	$this->cache->delete($cache_key);
+        }
         if (($cache_data = $this->cache->get($cache_key) ) === FALSE ) {
             $sql = "SELECT * FROM ty_product_type WHERE type_id IN (".$ids.")";
             $row = $this->db_r->query($sql)->result();
+
             $cache_data = $row;
             $this->cache->save($cache_key, $row , CACHE_TIME_SELECT_TYPE);
         }

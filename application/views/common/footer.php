@@ -58,7 +58,7 @@
             if(typeof _MEIQIA != 'undefined') {
                 var isShowMeiqia = 0;
 
-                $('.mpbtn_recharge').click(function(){
+                $('.mpbtn_recharge, .add_cart_jl .xunjia').click(function(){
                     isShowMeiqia += 1;
                     if(isShowMeiqia % 2) {
                         if(isShowMeiqia == 1) _MEIQIA('init');

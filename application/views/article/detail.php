@@ -1,27 +1,27 @@
 <?php include APPPATH . 'views/common/header.php'?>
 <div class="contain">
-        <div class="pro_detail_inner">
-             <span class="current-position">当前位置：<a href="/">首页</a>-<a href="/article" class="current-color">悦牙百科</a>-<a href="/article">牙科文章</a>-<a href="#"><?=$category2?></a></span>
-             <div class="wikipedia clearfix">
-                  <div class="wikipedia-left">
-                       <h1 class="wikipedia-bt"><?php echo $article->post_title?></h1>
-                       <div class="wikipedia-xx clearfix">
-                            <p class="wikipedia-sj"><span><?php echo $article->display_name;?></span>上传于<?php echo $article->post_date?></p>
-                            <div class="wikipedia-right clearfix">
-                                 <div class="wikipedia-ico"><i class="yybk-com-ico yypl-pl"></i><span class="c_comm_cnt"><?php echo $article->comment_count;?>条评论</span></div>
-                                 <div class="wikipedia-ico">
-                                    <?php if( (!empty($praise_data) && deep_in_array($article->post_id, $praise_data)) || !empty($_COOKIE['praise_anonymous_'.$article->post_id])) { ?>
-                                    <i class="yybk-com-ico dianzan-dl dianzan-dl"></i>
-                                    <?php }else{ ?>
-                                    <i class="yybk-com-ico dianzan-hs dianzan-dl" onclick="add_to_praise_article(<?php echo $article->post_id?>,this);"></i>
-                                    <?php } ?>
-                                     <span class="praise"><?php echo $article->zan_count;?></span></div>
-                                 <div class="wikipedia-ico bdsharebuttonbox"><a href="javascript:void(0);" class="bds_more share_ico" data-cmd="more">分享</a></div>
-                                 
-                                 
-                                 
-                            </div>
-                       </div>
+    <div class="pro_detail_inner">
+        <span class="current-position">当前位置：<a href="/">首页</a>-<a href="/article" class="current-color">悦牙百科</a>-<a href="/article">牙科文章</a>-<a href="#"><?=$category2?></a></span>
+        <div class="wikipedia clearfix">
+            <div class="wikipedia-left">
+                <h1 class="wikipedia-bt"><?php echo $article->post_title?></h1>
+                <div class="wikipedia-xx clearfix">
+                    <p class="wikipedia-sj"><span><?php echo $article->display_name;?></span>上传于<?php echo $article->post_date?></p>
+                    <div class="wikipedia-right clearfix">
+                        <div class="wikipedia-ico"><i class="yybk-com-ico yypl-pl"></i><span class="c_comm_cnt"><?php echo $article->comment_count;?>条评论</span></div>
+                        <div class="wikipedia-ico">
+                            <?php if( (!empty($praise_data) && deep_in_array($article->post_id, $praise_data)) || !empty($_COOKIE['praise_anonymous_'.$article->post_id])) { ?>
+                            <i class="yybk-com-ico dianzan-dl dianzan-dl"></i>
+                            <?php }else{ ?>
+                            <i class="yybk-com-ico dianzan-hs dianzan-dl" onclick="add_to_praise_article(<?php echo $article->post_id?>,this);"></i>
+                            <?php } ?>
+                             <span class="praise"><?php echo $article->zan_count;?></span>
+                        </div>
+                        <div class="wikipedia-ico bdsharebuttonbox">
+                        	<a href="javascript:void(0);" class="bds_more yypl-fx" data-cmd="more">分享</a>
+                        </div>       
+                    </div>
+                </div>
                        <div class="wikipedia-inner"><?php echo $article->post_content?></div>
                        <div class="comments">
                             <div class="comments-inner">

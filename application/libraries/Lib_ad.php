@@ -14,9 +14,10 @@ class Lib_ad{
      * 如果确实没有数据 则进行过滤不重复读取库
      */
    function get_ad_by_position_tag($cache_key,$position_tag,$size=0){
-      
+       $is_preview = intval(trim($this->CI->input->get('is_preview', true)));
        $ad=$this->CI->cache->get($cache_key);
-       if($ad=='no_db')return array();
+       if($ad=='no_db') return array();
+       if($is_preview) $ad = array();
        if(empty($ad))
        {
            $this->load->model('ad_model');

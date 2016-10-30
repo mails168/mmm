@@ -259,6 +259,12 @@
         // }else{
         //     console.log('qweradsf');
         // }
+	var load = null;
+	load = new Loading();
+        load.init({
+            target: $('body')[0]
+        });
+        load.start();  
 
         if(new Date().getTime() - last_cart_submit_time < 10000){
             alert('请不要重复提交');
@@ -295,11 +301,18 @@
         data['invoice'] = $("#invoice_msg .invoice_msg_check").html();
         data['remark'] = $("#remark").val();
         last_cart_submit_time = new Date().getTime();
+        
         $.ajax({
             url:'/cart/proc_checkout/0/'+v_rec_ids,
             data:data,
             dataType:'json',
             type:'POST',
+            beforeSend:function() {
+                     
+            },
+            complete:function(){
+            
+            },
             success:function(result){
                 last_cart_submit_time = 0;
                 if (result.msg) alert(result.msg);
@@ -310,8 +323,10 @@
             error:function()
             {
                 last_cart_submit_time = 0;
+			    load.stop();
             }
         });
+	//setTimeout(function(){load.stop()}, 1000);
     }
 
 </script>

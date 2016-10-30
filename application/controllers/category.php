@@ -20,11 +20,11 @@ class Category extends CI_Controller {
      * @param type $args 
      * category.htm?cat=1,2&brand=1,2&price=0-500&page=1&sort=1
      */
-    public function index() {
+    public function index($param) {
     //$this->output->cache(CACHE_HTML_LIST);
 	$this->load->model('product_model');
 	$this->load->helper('common');
-        $this->load->helper('product');
+    $this->load->helper('product');
 	
 	$data = array();
         $args = array();
@@ -34,6 +34,9 @@ class Category extends CI_Controller {
         $args['price'] = trim($this->input->get('price'));
         $args['sort'] = trim($this->input->get('sort'));
         $args['type_id'] = trim($this->input->get('tid'));
+        if (!$args['type_id']) {
+            $args['type_id'] = trim($param);            
+        }
         $price_range = array('1-99', '100-499', '500-999', '1000-1999', '2000以上');
                
         $p_num_arr = array();
@@ -67,7 +70,7 @@ class Category extends CI_Controller {
             if(!empty($type)) { 
                 $data['category'] = $type;
             }
-        } else {//获取当前位置
+        } else {                       //获取当前位置
             $type_arr = $this->rush_model->get_product_types($args['type_id']);
             
             $tids = '';
@@ -75,6 +78,9 @@ class Category extends CI_Controller {
             foreach ($type_arr as $t) {
                 $tids .= ($tids == '') ? $t->type_id : ','.$t->type_id;
                 $type_pos .= '-<a href="/category?tid='.$tids.'">'.$t->type_name.'</a>';
+                $data['category']['seo_type']['title'] = $t->title;
+                $data['category']['seo_type']['keywords'] = $t->keywords;
+                $data['category']['seo_type']['description'] = $t->description;
             }
             $type_position = '<span class="current-position">当前位置：<a href="/">首页</a>-<a href="/category" class="current-color">悦牙商城</a>'.$type_pos.'</span>';
             $data['type_position'] = $type_position;
@@ -109,10 +115,19 @@ class Category extends CI_Controller {
         $data['args'] = $args;
         $data['price_range'] = $price_range;
 		//创建分页
-	$data['arr_pagelist_num'] = create_pagination(array('pages' => $data['pages'] , 'page' => $data['page'], 'list_num' => 2, 'is_return' => 1));
-	//print_r($data);
+    	$data['arr_pagelist_num'] = create_pagination(array('pages' => $data['pages'] , 'page' => $data['page'], 'list_num' => 2, 'is_return' => 1));
+    	//print_r($data);
 
-	$this->load->view('category/category3', $data);
+        // 这里获取动态的seo
+        if(!empty($data['category']['seo_type'])){
+            $data = array_merge($data, $data['category']['seo_type']);
+        }else{
+            $this->load->library('lib_seo');
+            $seo = $this->lib_seo->get_seo_by_pagetag('pc_category_index', array());
+            $data = array_merge($data, $seo);
+        }
+
+    	$this->load->view('category/category3', $data);
     }
     /**
      * 分类列表

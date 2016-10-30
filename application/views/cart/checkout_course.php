@@ -111,6 +111,13 @@ var last_cart_submit_time = 0;
 var sub_id = '<?php print $product->sub_id; ?>';
 var genre_id = '<?=$genre_id?>';
 function submit_cart() {
+    var load = null;
+    load = new Loading();
+    load.init({
+        target: $('body')[0]
+    });
+    load.start();  
+    
     if(new Date().getTime() - last_cart_submit_time < 10000){
         alert('请不要重复提交');
         return false;
@@ -170,6 +177,7 @@ function submit_cart() {
         error:function()
         {
             last_cart_submit_time = 0;
+	    load.stop();
         }
     });
 }

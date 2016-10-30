@@ -17,7 +17,7 @@
                                     <i class="yybk-com-ico dianzan-hs dianzan-dl" onclick="add_to_praise_article(<?php echo $article->post_id?>,this);"></i>
                                     <?php } ?>
                                      <span class="praise"><?php echo $article->zan_count;?></span></div>
-                                 <div class="wikipedia-ico bdsharebuttonbox"><a href="javascript:void(0);" class="bds_more share_ico" data-cmd="more">分享</a></div>
+                                 <div class="wikipedia-ico bdsharebuttonbox"><a href="javascript:void(0);" class="bds_more yypl-fx" data-cmd="more">分享</a></div>
                                  
                                  
                                  

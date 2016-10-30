@@ -37,7 +37,7 @@ class Article extends CI_Controller
 
             $data['kw'] = '';
             $data['tmid'] = 0;
-            $post['page_size'] = 10;
+            $post['page_size'] = 20;
             $result = $this->wordpress_model->article_list($post);  //搜索的文章
             $data['arr_pagelist_num'] = create_pagination(array('pages' => $result['filter']['page_count'] , 'page' => $result['filter']['page'], 'list_num' => 2, 'is_return' => 1));
             $data['list'] = $result['list'];
@@ -346,7 +346,7 @@ class Article extends CI_Controller
         
         $data['kw'] = '';
         $data['tmid'] = 0;
-        $post['page_size'] = 10;
+        $post['page_size'] = 20;
         $result = $this->wordpress_model->videos_list($post);  //搜索的文章
         $data['arr_pagelist_num'] = create_pagination(array('pages' => $result['filter']['page_count'] , 'page' => $result['filter']['page'], 'list_num' => 2, 'is_return' => 1));
         $data['list'] = $result['list'];

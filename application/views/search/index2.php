@@ -17,7 +17,15 @@
                     <a href="/pdetail-<?php echo $p->product_id;?>">
                        <div class="mall_pro-img"><img src="<?php echo img_url($p->img_url.".220x220.jpg?v=2");?>" alt="" /></div>
                        <div class="mall_pro-mc"><span><?php echo $p->brand_name;?></span><?php echo $p->product_name;?></div>
-                       <div class="mall_pro-sprice"><i>¥</i><?php echo $p->product_price;?><span><i>¥</i><?php echo $p->market_price;?></span></div>
+                       <div style="display:none">
+                       	<?php var_export($p);?>
+                       </div>
+                       <?php if (1 == $p->price_show):?>
+
+                       	<div class="mall_pro-sprice"><i>¥</i>询价<span><i></i></span></div>
+                       <?php else: ?>
+                       	<div class="mall_pro-sprice"><i>¥</i><?php echo $p->product_price;?><span><i>¥</i><?php echo $p->market_price;?></span></div>                       	
+                   		<?php endif;?>
                     </a>
                 </li>
                 <?php endforeach; ?>

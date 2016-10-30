@@ -1,4 +1,7 @@
 <?php include APPPATH . 'views/common/header.php'?>
+
+<div class="item-hide"><H1>行业领先牙科材料，齿科材料，口腔材料牙科电商平台!</H1></div>
+
 <?php if(!empty($pc_top_carousel)){?>
 <div class="banner banner-small">
    <div class="shuffling">
@@ -7,7 +10,7 @@
                  <ul class="ck-slide-wrapper">
                      
                      <?php foreach($pc_top_carousel as $k => $v):?>
-                         <li style="<?php echo $k == 0 ? '' : 'display:none'?>"><a href="<?php echo $v['href'];?>" target="_blank"><img class="lazy" data-original="<?php echo img_url($v['img_src']);?>" width="1170" height="460" alt=""/></a></li>
+                         <li style="<?php echo $k == 0 ? '' : 'display:none'?>"><a href="<?php echo $v['href'];?>" target="_blank"><img class="unlazy" src="<?php echo img_url($v['img_src']);?>" width="1170" height="460" alt=""/></a></li>
                      <?php endforeach;?>
                  </ul>
                   <div class="ck-slidebox">
@@ -32,7 +35,10 @@
         <div class="optimal-product-tit">
             <div class="optimal-product-tit-inner clearfix">
                 <span class="line"></span>
-                <h1>精心为您挑选最优商品</h1>
+
+                <div class="item-hide"><H2>优秀牙科材料，齿科材料，口腔材料精品展示区</H2></div>
+
+                <span class="hotbt">精心为您挑选最优商品</span>
                 <span class="hot-pro">最新热卖商品</span>
             </div>
         </div>
@@ -101,6 +107,10 @@
     
     <?php if(!empty($pc_mouth_product)){ ?>
     <div id="kouqiangqicai" class="dental-equipments">
+
+    <div class="item-hide"><H2>优质牙科材料，齿科材料，口腔材料器材特卖区</H2></div>
+
+
         <div class="dental-equipments-title clearfix">
             <div class="dental-equipments-mc fl">口腔器材<span>PROFESSIONAL PRODUCT</span></div>
             <div class="dental-equipments-more fr"><a href="/category?cat=622&brand=&price=&page=0&sort=">查看更多</a><span></span></div>
@@ -110,6 +120,9 @@
             <li>
                 <a href="javascript:(void);" class="hotsale-img-box"><img class="lazy" data-original="<?php echo img_url($v->pic_url);?>" width="585" height="275" alt="<?php echo $v->ad_name;?>"/>
                     <div class="dental-equipments-bottom">
+
+                        <div class="item-hide"><H3><?php echo $v->seo;?></H3></div>
+
                         <div class="dental-mc fl"><i><?php echo $v->ad_name;?></i><span><?php echo $v->desc;?></span></div> 
                     </div>
                 </a>
@@ -139,6 +152,9 @@
     
     <?php if(!empty($pc_nurse_product)){ ?>
     <div id="hulibaojian" class="nursing-care clearfix">
+
+        <div class="item-hide"><H2>优质口腔材料（日常用品）特卖区</H2></div>
+
         <div class="dental-equipments-title red-line clearfix">
             <div class="dental-equipments-mc fl red-line-bold">护理保健<span>CONSUMMER PRODUCT</span></div>
             <div class="dental-equipments-more fr"><a href="/category?cat=2&brand=&price=&page=0&sort=">查看更多</a><span></span></div>
@@ -148,6 +164,9 @@
             <li>
                 <a href="javascript:(void);" class="hotsale-img-box"><img class="lazy" data-original="<?php echo img_url($v->pic_url);?>" width="585" height="275" alt="<?php echo $v->ad_name;?>"/>
                     <div class="dental-equipments-bottom">
+
+                        <div class="item-hide"><H3><?php echo $v->seo;?></H3></div>
+
                         <div class="dental-mc fl"><i><?php echo $v->ad_name;?></i><span><?php echo $v->desc;?></span></div> 
                     </div>
                 </a>
@@ -177,6 +196,9 @@
     
     <?php if(!empty($pc_room_course)){ ?>
     <div id="yueyajiangtang" class="tooth-lecture clearfix">
+
+        <div class="item-hide"><H2>牙科材料，齿科材料，口腔材料在线教育专区</H2></div>
+
         <div class="dental-equipments-title green-line clearfix">
             <div class="dental-equipments-mc fl green-line-bold">悦牙讲堂<span>TRAINING & WORKSHOP</span></div>
             <div class="dental-equipments-more fr"><a href="/index/course">查看更多</a><span></span></div>
@@ -207,13 +229,16 @@
     <?php } ?>
     
     <?php if(!empty($pc_video_article)){ ?>
-    <div id="yueyabaike" class="encyclopedia">
+    <div id="baikeshipin" class="encyclopedia">
+
+        <div class="item-hide"><H2>牙科材料，齿科材料，口腔材料相关文章</H2></div>   
+        
         <div class="dental-equipments-title blue-line clearfix">
-            <div class="dental-equipments-mc fl blue-line-bold">悦牙百科<span>VEDIO & ARTICLE</span></div>
-            <div class="dental-equipments-more fr"><a href="/video.html">查看更多</a><span></span></div>
+            <div class="dental-equipments-mc fl blue-line-bold">悦牙百科视频<span>VEDIO</span></div>
+            <div class="dental-equipments-more fr"><a href="/article/video">查看更多</a><span></span></div>
         </div>
         <?php foreach($pc_video_article as $v){ if($v->type == 'video'){ ?>
-        <ul class="encyclopedia-video">
+        <ul class="encyclopedia-video clearfix">
             <?php foreach ($v->products_info as $pro) { ?>
             <li>
                 <a href="/article/video_detail/<?php echo $pro->ID;?>"><img class="lazy" data-original="<?php echo $pro->cover;?>" width="585" height="275" alt="<?php echo $pro->post_title;?>"/>
@@ -225,15 +250,21 @@
             <?php } ?>
         </ul>
         <?php } } ?>    
+    </div>
 
+    <div id="baikewenzhang" class="encyclopedia">
+        <div class="dental-equipments-title blue-line clearfix">
+            <div class="dental-equipments-mc fl blue-line-bold">悦牙百科文章<span>ARTICLE</span></div>
+            <div class="dental-equipments-more fr"><a href="/article">查看更多</a><span></span></div>
+        </div>
         <?php foreach($pc_video_article as $v){ if($v->type == 'article'){ ?>    
         <ul class="video_list clearfix">
             <?php foreach ($v->products_info as $pro) { ?>
             <li>
                 <div class="video_list_top clearfix">
-                    <div class="video_list_pic"><a href="/article/video_detail/<?php echo $pro->ID;?>"><img class="lazy" data-original="<?php echo $pro->cover;?>" width="275" height="275" alt="<?php echo $pro->post_title;?>"/></a></div>
+                    <div class="video_list_pic"><a href="/article/detail/<?php echo $pro->ID;?>"><img class="lazy" data-original="<?php echo $pro->cover;?>" width="275" height="275" alt="<?php echo $pro->post_title;?>"/></a></div>
                     <div class="video_list_js">
-                        <a href="/article/video_detail/<?php echo $pro->ID;?>"><?php echo $pro->intro;?></a>
+                        <a href="/article/detail/<?php echo $pro->ID;?>"><?php echo $pro->intro;?></a>
                     </div>
                 </div>
                 <p class="video_list_bt"><?php echo $pro->post_title;?></p>
@@ -290,14 +321,14 @@
         </a>
         <?php } ?>
         <?php if(!empty($pc_video_article)){ ?> 
-        <a data-anchor="yueyabaike" href="#yueyabaike" class="mui-lift-nav color-orange">
+        <a data-anchor="baikeshipin" href="#baikeshipin" class="mui-lift-nav color-orange">
             <span class="left-side_ico left-side_ico6"></span>
             <span class="left-side-wz">悦牙百科</span>
         </a>
         <?php } ?>
         <?php if(!empty($pc_brand_teamwork)){ ?>  
         <a data-anchor="hezuopinpai" href="#hezuopinpai" class="left-side-rr mui-lift-nav color-orange">
-            <span class="left-side_ico left-side_ico7"></span>
+            <span class="left-side_ico left-side_ico8"></span>
             <span class="left-side-wz">合作品牌</span>
         </a>
         <?php } ?>
@@ -321,6 +352,7 @@
 </div>
 <?php } ?>
 <?php include APPPATH . 'views/common/footer.php'?>
+
 
 <script type="text/javascript" src="<?php echo static_style_url('new_pc/js/slide.js?v=version');?>"></script>
 <script type="text/javascript" src="<?php echo static_style_url('new_pc/js/index.js?v=version');?>"></script>

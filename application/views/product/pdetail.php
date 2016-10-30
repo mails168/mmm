@@ -23,7 +23,7 @@
                 </div>
             
             <div class="pro-detail-yb">
-                <h2><?php echo $p->brand_name.$p->product_name; ?></h2>
+                <h2><?php echo $p->brand_name  . ' ' . $p->product_name; ?></h2>
                 <p class="zhenghao"><?php echo isset($product_register[0]['register_no']) ? '注册证号：' . $product_register[0]['register_no'] : '';?></p>
                 <p class="zhenghao"><?php echo isset($p->product_sn) ? '商品编号：' . $p->product_sn : ''; ?></p>
                 <div class="pro-detail_bg clearfix">
@@ -40,8 +40,12 @@
 
                         <div class="detail_prcie clearfix" style="padding-top: 15px;">
                             <span class="detail_cx">促销</span>
+                            <?php if(1 == $p->price_show):?>
+                            请与在线客服联系报价。谢谢！
+                            <?php else:?>
                             <span class="detail_yj"><i class="zhekou2">折扣</i>原价<?php echo $p->market_price; ?>现价<?php echo $p->product_price; ?>，享<?php echo $p->discount_percent; ?>折</span>
                             <span class="cx fr">共1条促销信息</span>
+                        	<?php endif;?>
                         </div>
                     </div>
                 </div>

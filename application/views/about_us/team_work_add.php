@@ -1,4 +1,4 @@
-<link href="<?php echo static_style_url('pc/css/bootstrap.css')?>" rel="stylesheet" type="text/css" media="all">
+<link href="<?php echo static_style_url('new_pc/css/bootstrap.css?v=version')?>" rel="stylesheet" type="text/css" media="all">
 <?php include APPPATH . 'views/common/header.php'?>
 <div class="about-us">
     <div class="about-con">
@@ -9,7 +9,7 @@
             <li><a href="/about_us/feedback">意见反馈</a></li>
             <li><a href="/about_us/sales_policy">售后政策</a></li>
             <li><a href="/about_us/team_work" class="about-currt">合作咨询</a></li>
-            <li><a href="/about_us/join_us">加入我们</a></li>
+            <li><a href="http://jobs.51job.com/all/co2393685.html" target="_blank">加入我们</a></li>
         </ul>
         <div class="hezuohuoban clearfix">
             <div class="hezuoliucheng">
@@ -53,7 +53,7 @@
         </div>
     </div>
 </div>
-
+<!--
 <div id="forgot-box" class="modal v-pov" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -68,9 +68,9 @@
         </div>
     </div>
 </div>
-
+-->
 <?php include APPPATH . 'views/common/footer.php'?>
-<script type="text/javascript" src="<?php echo static_style_url('pc/js/bootstrap.min.js')?>"></script>
+<script type="text/javascript" src="<?php echo static_style_url('new_pc/js/bootstrap.min.js?v=version')?>"></script>
 <script type="text/javascript" >
     $('.captcha').click(function(e){
         e.preventDefault();

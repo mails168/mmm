@@ -8,9 +8,9 @@
             <li><a href="/about_us/feedback">意见反馈</a></li>
             <li><a href="/about_us/sales_policy">售后政策</a></li>
             <li><a href="/about_us/team_work" class="about-currt">合作咨询</a></li>
-            <li><a href="/about_us/join_us">加入我们</a></li>
+            <li><a href="http://jobs.51job.com/all/co2393685.html" target="_blank">加入我们</a></li>
         </ul>
-        <div class="consultation-img"><a href="/about_us/team_work_add"><img src="<?php echo static_style_url('pc/images/hzzx-but.png');?>"></a></div>
+        <div class="consultation-img"><a href="/about_us/team_work_add"><img src="<?php echo static_style_url('new_pc/images/hzzx-but.png?v=version');?>"></a></div>
         <div class="hezuohuoban clearfix">
             <div class="hezuoliucheng">
                 <div class="hzlc-tit">合作流程</div>

@@ -137,7 +137,7 @@
                     <?php foreach($product_list as $product): ?>
                     <li id="goods-<?=$product->product_id?>">
                     <a href="/pdetail-<?php print $product->product_id;?>.html">
-                         <div class="mall_pro-img"><img class="lazy" data-original="<?php print img_url($product->img_url.".220x220.jpg?v=2"); ?>" alt="" /></div>
+                         <div class="mall_pro-img"><img class="lazy" data-original="<?php print img_url($product->img_url.".220x220.jpg?v=1"); ?>" alt="" /></div>
                          <div class="mall_pro-mc"><span><?php print $product->brand_name;?></span><?php print $product->product_name;?></div>
                          <div class="mall_pro-sprice"><?php if($product->price_show): ?><i>询价</i><?php else: ?><i>¥</i><?php print $product->shop_price; ?><span><i>¥</i><em><?php print $product->market_price; ?></em></span><?php endif; ?></div>
                     </a>

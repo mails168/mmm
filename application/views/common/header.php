@@ -4,8 +4,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta http-equiv=Content-Type content="text/html;charset=utf-8">
         <title><?php echo isset($title) ? $title : '悦牙网'?></title>
-        <meta name="Keywords" content="<?php echo isset($keywords) ? $keywords : '';?>">
-        <meta name="Description" content="<?php echo isset($description) ? $description : '';?>">
+        <meta name="Keywords" content="<?php echo isset($keywords) ? $keywords : '悦牙网';?>">
+        <meta name="Description" content="<?php echo isset($description) ? $description : '悦牙网';?>">
         <link href="<?php echo static_style_url('new_pc/css/common.css?v=version');?>" rel="stylesheet" type="text/css">
         <link href="<?php echo static_style_url('new_pc/css/style.css?v=version');?>" rel="stylesheet" type="text/css">
     </head>
@@ -89,7 +89,7 @@
                                             foreach($category_list['cat'] as $id => $cat): 
                                             $i++;
                                         ?>
-                                        <div class="fenlei_item fore<?=$i?>"><h3><a href="/category?tid=<?=$id?>"><?=$cat['name']?></a></h3><i>&gt;</i></div>
+                                        <div class="fenlei_item fore<?=$i?>"><h3><a href="/type-<?=$id?>.html"><?=$cat['name']?></a></h3><i>&gt;</i></div>
                                         <?php endforeach;?>
                                     </div>
                                     <div class="classification_right dorpdown-layer">
@@ -97,11 +97,11 @@
                                         <div class="item-sub">
                                             <?php foreach ($t1_arr['sub'] as $id2 => $t2_arr): ?>
                                             <dl class="fenlei1">
-                                                <dt><a href="/category?tid=<?=$id1.','.$id2?>"><?=$t2_arr['name']?><i>&gt;</i></a></dt>
+                                                <dt><a href="/type-<?=$id2?>.html"><?=$t2_arr['name']?><i>&gt;</i></a></dt>
                                                 <?php if(isset($t2_arr['sub'])): ?>
                                                 <dd>
                                                     <?php foreach($t2_arr['sub'] as $id3 => $t3_arr): ?>
-                                                    <a href="/category?tid=<?=$id1.','.$id2.','.$id3?>"><?=$t3_arr['name']?></a>
+                                                    <a href="/type-<?=$id3?>.html"><?=$t3_arr['name']?></a>
                                                     <?php endforeach; ?>
                                                 </dd>
                                                 <?php endif; ?>

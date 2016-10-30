@@ -755,6 +755,12 @@ function unpay_total(){
 var last_cart_submit_time = 0;
 var default_pay_id = '<?=$default_pay_id?>';
 function submit_cart() {
+	var load = null;
+	    load = new Loading();
+	    load.init({
+	        target: $('body')[0]
+	    });
+	    load.start();  
     if(new Date().getTime() - last_cart_submit_time < 10000){
         alert('请不要重复提交');
         return false;

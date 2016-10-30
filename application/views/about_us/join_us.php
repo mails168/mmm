@@ -8,13 +8,13 @@
             <li><a href="/about_us/feedback">意见反馈</a></li>
             <li><a href="/about_us/sales_policy">售后政策</a></li>
             <li><a href="/about_us/team_work">合作咨询</a></li>
-            <li><a href="/about_us/join_us" class="about-currt">加入我们</a></li>
+            <li><a href="http://jobs.51job.com/all/co2393685.html" target="_blank" class="about-currt">加入我们</a></li>
         </ul>
         <div class="about-lb">
-            <div class="about-img"><img src="<?php echo static_style_url('pc/images/about-pic.jpg');?>"></div>
+            <div class="about-img"><img src="<?php echo static_style_url('new_pc/images/about-pic.jpg?v=version');?>"></div>
             <p class="about-tit">加入我们<span>Join us</span></p>
             <p class="Join-js">
-                <img src="<?php echo static_style_url('pc/images/join-img.jpg');?>" usemap="#Map">
+                <img src="<?php echo static_style_url('new_pc/images/join-img.jpg?v=version');?>" usemap="#Map">
                 <map name="Map">
                     <area shape="rect" coords="236,9,439,199" href="javascript:void(0);" onfocus="blur(this);">
                     <area shape="rect" coords="154,182,292,306" href="javascript:void(0);" onfocus="blur(this);">
